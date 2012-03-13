@@ -1,0 +1,2 @@
+Run the server.js with node:
+> node server.js and navigate to http://localhost:8888 in your browser

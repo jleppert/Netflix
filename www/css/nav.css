@@ -18,6 +18,7 @@ div#left .nav ul li {
 div#left .nav ul li {
     background: #3c3631;
     color: #a8a8a8;
+    height: 35px;
 }
 
 div#left .nav ul li.active {
@@ -27,9 +28,10 @@ div#left .nav ul li.active {
 
 div#left .nav div.cursor {
     border: 5px solid #aaa;
-    height: 46px;
+    height: 45px;
     width: 215px;
     position: absolute;
     top: -5px;
-    left: 5px;
+    left: 7px;
+    display: none;
 }

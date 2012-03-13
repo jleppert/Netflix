@@ -50,11 +50,14 @@ netflix.ns(function(ns, Netflix) {
         toString: ns.util.object.toString
     });
    
+    // for wildcard events
+    var wildcard = '*';
     ns.provide('util', 'events', {
         on: function(events, callback, scope) {
             events = events.split(/\s+/);
             var cbs = this._callbacks || (this._callbacks = {});
-            
+            scope = scope || this;
+
             while(event = events.shift()) {
                 cbs[event] = cbs[event] || [];
                 cbs[event].push([callback, scope]);
@@ -65,9 +68,12 @@ netflix.ns(function(ns, Netflix) {
             events = events.split(/\s+/);
             var cbs = this._callbacks;
             while(event = events.shift()) {
-                if(cbs[event] && cbs[event].length) {
-                    for(var i = 0, l = cbs[event].length; i < l; i++) {
-                        cbs[event][0].apply(this, slice.call(arguments, 1));
+                if((cbs[event] && cbs[event].length) || (cbs[wildcard] && cbs[wildcard].length)) {
+                    var _cbs = cbs[event] || cbs[wildcard];
+                    for(var i = 0, l = _cbs.length; i < l; i++) {
+                        if(_cbs[i] && _cbs[i][0] && _cbs[i][0].apply) {
+                            _cbs[i][0].apply(_cbs[i][1], [event].concat(Array.prototype.slice.call(arguments, 1)));
+                        }
                     }
                 }
             }

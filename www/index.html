@@ -2,16 +2,16 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <link rel="stylesheet" href="css/reset.css"/>
-        <link rel="stylesheet" href="css/layout.css"/>
-        <link rel="stylesheet" href="css/app.css"/>
-        <link rel="stylesheet" href="css/nav.css"/>
-        <link rel="stylesheet" href="css/grid.css"/>
+        <link rel="stylesheet" href="/css/reset.css"/>
+        <link rel="stylesheet" href="/css/layout.css"/>
+        <link rel="stylesheet" href="/css/app.css"/>
+        <link rel="stylesheet" href="/css/nav.css"/>
+        <link rel="stylesheet" href="/css/grid.css"/>
 
-        <script src="js/lib/vendor/zepto.js"></script>
-        <script src="js/lib/netflix/index.js"></script>
-        <script src="js/lib/netflix/util.js"></script>
-        <script src="js/lib/netflix/ui.js"></script>
+        <script src="/js/lib/vendor/zepto.js"></script>
+        <script src="/js/lib/netflix/index.js"></script>
+        <script src="/js/lib/netflix/util.js"></script>
+        <script src="/js/lib/netflix/ui.js"></script>
         <script>
             // application entrypoint
             $(document).ready(function() {
@@ -24,72 +24,88 @@
                     // replace with request object wrapper, caching object handler in the future etc...
                     data: [{
                             section: 'Suggestions For You',
+                            active: true,
+                            id: 'suggestions',
                             action: '/list/suggestions',
                             grid: [
-                                    { src: 'images/boxart/408939.jpg' },
-                                    { src: 'images/boxart/408939.jpg' },
-                                    { src: 'images/boxart/408939.jpg' },
-                                    { src: 'images/boxart/408939.jpg' },
-                                    { src: 'images/boxart/408939.jpg' },
-                                    { src: 'images/boxart/408939.jpg' },
-                                    { src: 'images/boxart/408939.jpg' },
-                                    { src: 'images/boxart/408939.jpg' }
+                                    { src: '/images/boxart/408939.jpg' },
+                                    { src: '/images/boxart/408939.jpg' },
+                                    { src: '/images/boxart/408939.jpg' },
+                                    { src: '/images/boxart/408939.jpg' },
+                                    { src: '/images/boxart/408939.jpg' },
+                                    { src: '/images/boxart/408939.jpg' },
+                                    { src: '/images/boxart/408939.jpg' },
+                                    { src: '/images/boxart/408939.jpg' }
                                 ]
                            },
                            {
                             section: 'Recently Watched',
                             action: '/list/recent',
+                            id: 'recent',
                             grid: [
-                                    { src: 'images/boxart/408939.jpg' },
-                                    { src: 'images/boxart/408939.jpg' },
-                                    { src: 'images/boxart/408939.jpg' },
-                                    { src: 'images/boxart/408939.jpg' },
-                                    { src: 'images/boxart/408939.jpg' },
-                                    { src: 'images/boxart/408939.jpg' },
-                                    { src: 'images/boxart/408939.jpg' },
-                                    { src: 'images/boxart/408939.jpg' }
+                                    { src: '/images/boxart/408939.jpg' },
+                                    { src: '/images/boxart/408939.jpg' },
+                                    { src: '/images/boxart/408939.jpg' },
+                                    { src: '/images/boxart/408939.jpg' },
+                                    { src: '/images/boxart/408939.jpg' },
+                                    { src: '/images/boxart/408939.jpg' },
+                                    { src: '/images/boxart/408939.jpg' },
+                                    { src: '/images/boxart/408939.jpg' }
                                 ]
                            },
                            {
                             section: 'New Arrivals',
                             action: '/list/new',
+                            id: 'new',
                             grid: [
-                                    { src: 'images/boxart/408939.jpg' },
-                                    { src: 'images/boxart/408939.jpg' },
-                                    { src: 'images/boxart/408939.jpg' },
-                                    { src: 'images/boxart/408939.jpg' },
-                                    { src: 'images/boxart/408939.jpg' },
-                                    { src: 'images/boxart/408939.jpg' },
-                                    { src: 'images/boxart/408939.jpg' },
-                                    { src: 'images/boxart/408939.jpg' }
+                                    { src: '/images/boxart/408939.jpg' },
+                                    { src: '/images/boxart/408939.jpg' },
+                                    { src: '/images/boxart/408939.jpg' },
+                                    { src: '/images/boxart/408939.jpg' },
+                                    { src: '/images/boxart/408939.jpg' },
+                                    { src: '/images/boxart/408939.jpg' },
+                                    { src: '/images/boxart/408939.jpg' },
+                                    { src: '/images/boxart/408939.jpg' }
                                 ]
                            },
                            {
                             section: 'Instant Queue',
                             action: '/list/instant',
+                            id: 'instant',
                             grid: [
-                                    { src: 'images/boxart/408939.jpg' },
-                                    { src: 'images/boxart/408939.jpg' },
-                                    { src: 'images/boxart/408939.jpg' },
-                                    { src: 'images/boxart/408939.jpg' },
-                                    { src: 'images/boxart/408939.jpg' },
-                                    { src: 'images/boxart/408939.jpg' },
-                                    { src: 'images/boxart/408939.jpg' },
-                                    { src: 'images/boxart/408939.jpg' }
+                                    { src: '/images/boxart/408939.jpg' },
+                                    { src: '/images/boxart/408939.jpg' },
+                                    { src: '/images/boxart/408939.jpg' },
+                                    { src: '/images/boxart/408939.jpg' },
+                                    { src: '/images/boxart/408939.jpg' },
+                                    { src: '/images/boxart/408939.jpg' },
+                                    { src: '/images/boxart/408939.jpg' },
+                                    { src: '/images/boxart/408939.jpg' }
                                 ]
                             }
                        ],
                    // UI component configuration
                    ui: [{
                             object: 'ui.List',
+                            id: 'navList',
                             position: 'left',
-                            template: 'list-tpl'
+                            template: 'list-tpl',
+                            focus: true,
+                            bounces: {
+                                right: 'titleGrid'
+                            }
                         },
                         {
                             object: 'ui.Collection',
+                            id: 'titleGrid',
                             position: 'right',
                             template: 'grid-tpl',
-                            contains: 'ui.Grid'
+                            contains: 'ui.Grid',
+                            focus: false,
+                            bounces: {
+                                left: 'navList',
+                                right: 'navList'
+                            }
                         }],
                     // UI Input configuration
                     inputHandler: [{
@@ -114,7 +130,13 @@
                                     source: 'keyDown',
                                     params: [40],
                                     emit: 'nav:down'
-                        }]
+                                },
+                                {
+                                    source: 'keyPress',
+                                    params: [13],
+                                    emit: 'nav:enter'
+                                }
+                        ]
                     }]
                 });
 
@@ -130,15 +152,19 @@
                 <div class="clear"></div>
                 <div id="left" class="grid span-3"></div>
                 <div id="right" class="grid span-9"></div>
-                <img id="animations" src="css/animations.css" />
+                <img id="animations" src="/css/animations.css" />
             </div>
         </div>
         <script type="text/template" id="list-tpl">
             <div class="nav">
-                <div class="cursor c1"></div>
+                <div class="cursor"></div>
                 <ul>
                     <% for(var i = 0; item = items[i]; i++) { %>
-                        <li data-action="<%= item.action %>"><%= item.section %></li>
+                        <% if(item.active) { %>
+                            <li class="active" id="<%= item.id %>" data-action="<%= item.action %>"><%= item.section %></li>
+                        <% } else { %>
+                            <li id="<%= item.id %>" data-action="<%= item.action %>"><%= item.section %></li>
+                        <% } %>
                     <% } %>
                 </ul>
             </div>
@@ -146,7 +172,7 @@
         <script type="text/template" id="grid-tpl">
             <div class="grid">
                 <span class="title"><%= item.section %></span>
-                <div class="cursor r1 c1"></div>
+                <div class="cursor r0 c0"></div>
                 <ul id="<%= item.action %>">
                     <% for (var i = 0; gridItem = item.grid[i]; i++) { %>
                         <li><img src="<%= gridItem.src %>"/></li>
