@@ -1,0 +1,12 @@
+/* Grid */
+div#right .grid div.cursor {
+    -moz-transition-property: all;
+    -moz-transition-duration: 0.2s;
+}
+
+/* Navigation List Menu */
+div#left .nav div.cursor {
+    -moz-transition-property: all;
+    -moz-transition-duration: 0.2s;
+}
+

@@ -1,0 +1,35 @@
+div#left .nav {
+    position: relative;
+    height: 100%;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 75px;
+}
+
+div#left .nav ul {
+    list-style-type: none;
+}
+
+div#left .nav ul li {
+    padding: 10px;
+    margin: 10px;
+}
+
+div#left .nav ul li {
+    background: #3c3631;
+    color: #a8a8a8;
+}
+
+div#left .nav ul li.active {
+    background: #b0b0b0;
+    color: #211D1D;
+}
+
+div#left .nav div.cursor {
+    border: 5px solid #aaa;
+    height: 46px;
+    width: 215px;
+    position: absolute;
+    top: -5px;
+    left: 5px;
+}

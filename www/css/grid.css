@@ -1,0 +1,56 @@
+div#right .grid {
+    height: 100%;
+    margin: 20px;
+    position: relative;
+}
+
+div#right .grid span.title {
+    color: #868481;
+    font-size: 26px;
+}
+
+div#right .grid ul {
+    clear: both;
+    list-style-type: none;
+}
+
+div#right .grid ul li {
+    float: left;
+    margin-right: 20px;
+    padding-top: 20px;
+}
+
+div#right .grid div.cursor {
+    display: none;
+    position: absolute;
+    height: 219px;
+    width: 155px;
+    border: 5px solid #aaa;
+    left: 0px;
+    top: 0px;
+}
+
+/* Grid Caret Positioning */
+div#right .grid div.cursor.r1 {
+    top: 45px;
+}
+
+div#right .grid div.cursor.r2 {
+    top: 280px;
+}
+
+div#right .grid div.cursor.c1 {
+    left: 0px;
+}
+
+div#right .grid div.cursor.c2 {
+    left: 170px;
+}
+
+div#right .grid div.cursor.c3 {
+    left: 340px;
+}
+
+div#right .grid div.cursor.c4 {
+    left: 510px;
+}
