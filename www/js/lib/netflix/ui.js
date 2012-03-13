@@ -156,11 +156,16 @@ netflix.ns(function(ns) {
             this.$cursor = $(this.el).find('div.cursor');
             if(this.focus) this.$cursor.show(); 
             
+            // dumb
             var self = this;
-            this.$cursor.bind('transitionend', function() {
+            var end = function() {
                 $(self.el).find('li').removeClass('active');
                 $(self.el).find('li#' + self.active.id).addClass('active');
-            });
+            };
+            
+            this.$cursor[0].addEventListener('webkitTransitionEnd', end, false);
+            this.$cursor[0].addEventListener('transitionend', end, false);
+            
             this.emit('render');
         }
     }));
